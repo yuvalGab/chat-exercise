@@ -1,23 +1,24 @@
 (function() {
-  //   setInterval(() => {
-  //     renderChat();
-  //   }, 500);
+  setInterval(() => {
+    renderChat();
+  }, 2000);
 
   renderChat();
 
   function renderChat() {
     const existMessages = document.querySelectorAll(".message");
-    getMessages().then(newMessages => {
-      if (newMessages && existMessages) {
-        if (newMessages.length > existMessages.length) {
-          newMessages.forEach((msg, i) => {
+    getMessages().then(messages => {
+      const allMessages = messages.filter(msg => msg.name && msg.message);
+      if (allMessages && existMessages) {
+        if (allMessages.length > existMessages.length) {
+          allMessages.forEach((msg, i) => {
             if (i > existMessages.length - 1) {
               printMessage(msg.name, msg.message);
             }
           });
         }
-      } else {
-        newMessages.forEach(msg => printMessage(msg.name, msg.message));
+      } else if (!existMessages) {
+        allMessages.forEach(msg => printMessage(msg.name, msg.message));
       }
     });
   }
