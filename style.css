@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #eaebed;
+  height: 100vh;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-width: 680px;
+  border: 1px solid #c4c5c6;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #babbbc;
+}
+
+.messages-window {
+  flex: 20;
+  overflow-y: auto;
+  background-color: white;
+}
+
+.new-message {
+  flex: 5;
+  background-color: #cfd2d6;
+  border-top: 10px solid #babbbc;
+}
