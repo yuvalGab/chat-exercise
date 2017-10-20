@@ -56,14 +56,15 @@
 
   sendBtn.addEventListener("click", e => {
     e.preventDefault();
-    const name = document.querySelector('[name="name"]').value;
-    const content = document.querySelector('[name="message"]').value;
-    const errorType = newMessageValidation(name, content);
+    const name = document.querySelector('[name="name"]');
+    const content = document.querySelector('[name="message"]');
+    const errorType = newMessageValidation(name.value, content.value);
     if (errorType !== -1) {
       return alert(errorsMessages[errorType]);
     }
-
-    sendMessage(name, content);
+    sendMessage(name.value, content.value);
+    name.value = "";
+    content.value = "";
   });
 
   function newMessageValidation(name, content) {
