@@ -7,6 +7,7 @@
 body {
   background-color: #eaebed;
   height: 100vh;
+  font-size: 10px;
 }
 
 .chat-container {
@@ -30,4 +31,50 @@ body {
   flex: 5;
   background-color: #cfd2d6;
   border-top: 10px solid #babbbc;
+  padding: 10px;
+}
+
+input,
+button {
+  display: block;
+  width: 100%;
+}
+
+input {
+  font-size: 1.6em;
+  padding: 6px 4px;
+  margin-bottom: 10px;
+}
+
+button {
+  font-size: 2em;
+  padding: 10px;
+  color: white;
+  background-color: #849bba;
+  border: unset;
+  cursor: pointer;
+  text-shadow: 0px 0px 2px black;
+  transition: background-color 700ms;
+}
+
+button:hover {
+  background-color: #3a5170;
+}
+
+.message {
+  padding: 16px 20px;
+  border-bottom: 1px dashed #dae4f2;
+}
+
+.message span {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+.message p {
+  font-size: 1.6em;
+}
+
+.message:nth-child(even) {
+  background-color: #f9f9f9;
 }
